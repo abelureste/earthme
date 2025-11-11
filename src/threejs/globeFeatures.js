@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { convertLatLonToVec3 } from 'utils.js'
+import { convertLatLonToVec3 } from './utils'
 
 export function addGlobeFeatures(earthGroup) {
   const lineMaterial = new THREE.LineBasicMaterial({

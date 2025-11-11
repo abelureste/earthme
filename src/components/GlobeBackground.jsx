@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { createEarth } from '../threeJS/earth.js'
 import { createEnvironment } from '../threejs/environment.js'
 import { addPins } from '../threejs/pins.js'
+import { addGlobeFeatures } from '../threejs/globeFeatures.js'
 
 function SceneContent() {
   const { tiltGroup, earthGroup, cloudMesh } = useMemo(() => {
@@ -16,6 +17,7 @@ function SceneContent() {
     const s = new THREE.Scene()
     createEnvironment(s)
     addPins(earthGroup)
+    addGlobeFeatures(earthGroup)
     return s
   }, [earthGroup])
 
