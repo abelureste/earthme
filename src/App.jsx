@@ -7,6 +7,7 @@ import UserSearch from './components/UserSearch'
 import UserSearchResults from './components/UserSearchResults'
 import MainUserCard from './components/MainUserCard'
 import PinHolder from './components/PinHolder'
+import SearchFeature from './components/SearchFeature'
 
 export default function App() {
   return (
@@ -14,8 +15,7 @@ export default function App() {
       <GlobeBackground />
       
       {/* Your other website content goes here */}
-      <UserSearch />
-      {/*<UserSearchResults />*/}
+      <SearchFeature />
       <GlobeControls />
       <MainUserCard />
       {/* <PinHolder /> */}

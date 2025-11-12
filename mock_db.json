@@ -1,19 +1,96 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Abel Ureste",
+      "username": "abelureste",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Jane Doe",
+      "username": "janedoe",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Ken Watanabe",
+      "username": "kenw",
+      "imageUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "pins": [
+    {
+      "id": 101,
+      "userId": 1,
+      "locationName": "New York, NY, USA",
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "dateAdded": "11/21/2025"
+    },
+    {
+      "id": 102,
+      "userId": 1,
+      "locationName": "London, UK",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "dateAdded": "10/15/2025"
+    },
+    {
+      "id": 103,
+      "userId": 1,
+      "locationName": "Sydney, Australia",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "dateAdded": "09/05/2025"
+    },
+    {
+      "id": 104,
+      "userId": 2,
+      "locationName": "Paris, France",
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "dateAdded": "11/20/2025"
+    },
+    {
+      "id": 105,
+      "userId": 2,
+      "locationName": "Tokyo, Japan",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "dateAdded": "08/12/2025"
+    },
+    {
+      "id": 106,
+      "userId": 3,
+      "locationName": "Cairo, Egypt",
+      "latitude": 30.0444,
+      "longitude": 31.2357,
+      "dateAdded": "07/01/2025"
+    },
+    {
+      "id": 107,
+      "userId": 3,
+      "locationName": "Rio de Janeiro, Brazil",
+      "latitude": -22.9068,
+      "longitude": -43.1729,
+      "dateAdded": "06/15/2025"
+    },
+    {
+      "id": 108,
+      "userId": 1,
+      "locationName": "North Pole",
+      "latitude": 90.0,
+      "longitude": 0.0,
+      "dateAdded": "12/25/2024"
+    },
+    {
+      "id": 109,
+      "userId": 1,
+      "locationName": "South Pole",
+      "latitude": -90.0,
+      "longitude": 0.0,
+      "dateAdded": "01/15/2025"
+    }
+  ]
 }
