@@ -45,6 +45,14 @@
       "dateAdded": "09/05/2025"
     },
     {
+      "id": 103,
+      "userId": 1,
+      "locationName": "Boston, USA",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "dateAdded": "09/05/2025"
+    },
+    {
       "id": 104,
       "userId": 2,
       "locationName": "Paris, France",

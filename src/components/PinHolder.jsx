@@ -1,15 +1,21 @@
 import PinCard from "./PinCard"
 import AddPin from "./AddPin"
 
-export default function PinHolder() {
+import { FaArrowUp } from 'react-icons/fa'
+
+export default function PinHolder({ pins }) {
+
   return (
     <div className="text-white">
 
-      <div className="fixed bottom-39 left-1/2 -translate-x-1/2 z-10">
-        <div className="space-y-2">
-          <PinCard />
-          <PinCard />
-          <PinCard />
+      <div className="fixed bottom-31 left-1/2 -translate-x-1/2 z-10">
+        <div className="space-y-2 overflow-y-scroll ml-4 h-100">
+          {pins.map(pin =>
+            <PinCard
+              key={pin.id}
+              pin={pin}
+            />
+          )}
           <AddPin />
         </div>
       </div>

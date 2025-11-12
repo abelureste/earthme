@@ -15,10 +15,9 @@ export default function App() {
       <GlobeBackground />
       
       {/* Your other website content goes here */}
-      <SearchFeature />
+      {/* <SearchFeature /> */}
       <GlobeControls />
       <MainUserCard />
-      {/* <PinHolder /> */}
       {/* <Homepage /> */}
     </div>
   )

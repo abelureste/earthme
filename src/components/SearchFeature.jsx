@@ -20,11 +20,19 @@ export default function SearchFeature() {
       const fetchUsers = async() => {
         try {
           const response = await fetch('http://localhost:3000/users')
-          const data = await response.json()
+          const allUsers = await response.json()
   
-          if(data){
+          if(allUsers){
             console.log("Successfully fetched users")
-            setUsers(data)
+
+            const lowerCaseSearch = searchText.toLowerCase()
+            const filteredUsers = allUsers.filter(user => {
+              const nameMatch = user.name.toLowerCase().includes(lowerCaseSearch)
+              const userNameMatch = user.username.toLowerCase().includes(lowerCaseSearch)
+              return nameMatch || userNameMatch
+            })
+
+            setUsers(filteredUsers)
           }
         } catch (error) {
           console.error("Failed to fetch users:", error)

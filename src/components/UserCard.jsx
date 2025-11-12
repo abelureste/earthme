@@ -6,7 +6,7 @@ export default function UserCard({ user, pinCount }) {
     return null
   }
 
-  const { name, username, imageURL } = user
+  const { name, username, imageUrl } = user
 
   return (
     <div className="text-white">
@@ -15,7 +15,7 @@ export default function UserCard({ user, pinCount }) {
           <div className="flex justify-between">
             <div className="flex items-center space-x-3">
               <img 
-                src={imageURL}
+                src={imageUrl}
                 alt="Profile picture"
                 className="h-20 w-20 rounded-full object-cover border border-gray-600"
               />
