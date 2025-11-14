@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react'
 import UserCard from "./UserCard"
 
-export default function UserSearchResults({ users, loading }) {
+export default function UserSearchResults({ users, loading, setSelectedUserId, setSearchText }) {
+
+  const handleUserClick = (userId) => {
+    setSelectedUserId(userId);
+    setSearchText('');
+  }
 
   if(loading) {
     return (
@@ -19,7 +23,7 @@ export default function UserSearchResults({ users, loading }) {
             <UserCard
               key={user.id}
               user={user}
-              pinCount={5}
+              onUserSelect={() => handleUserClick(user.id)}
             />
           )}
         </div>

@@ -1,7 +1,12 @@
 import * as THREE from 'three'
-import { convertLatLonToVec3 } from './utils'
+// 1. Import 'pinUpVector' from utils
+import { convertLatLonToVec3, pinUpVector } from './utils'
+// 2. Import 'createPin'
+import { createPin } from './pins.js'
 
-export function addGlobeFeatures(earthGroup) {
+export function addGlobeFeatures() {
+  const featuresGroup = new THREE.Group()
+
   const lineMaterial = new THREE.LineBasicMaterial({
     color: 0xaaaaaa,
     transparent: true,
@@ -19,7 +24,7 @@ export function addGlobeFeatures(earthGroup) {
     }
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     const meridianLine = new THREE.Line(geometry, lineMaterial);
-    earthGroup.add(meridianLine);
+    featuresGroup.add(meridianLine);
   }
 
   // latitude lines
@@ -30,6 +35,37 @@ export function addGlobeFeatures(earthGroup) {
     }
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     const latitudeLine = new THREE.Line(geometry, lineMaterial);
-    earthGroup.add(latitudeLine);
+    featuresGroup.add(latitudeLine);
   }
+
+  // --- Add Pole Pins ---
+  
+  const polePinScale = 4 // Make them 2.5x larger
+  const polePinColor = 0xc9c9c9 // Make them white
+
+  // 3. North Pole Pin
+  const northPolePin = createPin(polePinColor);
+  northPolePin.scale.setScalar(polePinScale); // Scale it up
+  const northPolePosition = convertLatLonToVec3(90, 0, 1);
+  northPolePin.position.copy(northPolePosition);
+  northPolePin.quaternion.setFromUnitVectors(
+    pinUpVector, 
+    northPolePosition.clone().normalize()
+  );
+  featuresGroup.add(northPolePin);
+
+  // 4. South Pole Pin
+  const southPolePin = createPin(polePinColor);
+  southPolePin.scale.setScalar(polePinScale); // Scale it up
+  const southPolePosition = convertLatLonToVec3(-90, 0, 1);
+  southPolePin.position.copy(southPolePosition);
+  southPolePin.quaternion.setFromUnitVectors(
+    pinUpVector, 
+    southPolePosition.clone().normalize()
+  );
+  featuresGroup.add(southPolePin);
+
+  // --- End of Pole Pins ---
+
+  return featuresGroup
 }

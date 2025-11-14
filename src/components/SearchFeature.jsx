@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import UserSearch from './UserSearch'
 import UserSearchResults from './UserSearchResults'
 
-export default function SearchFeature() {
+export default function SearchFeature({ setSelectedUserId }) {
 
     const [ users, setUsers ] = useState([])
     const [ loading, setLoading ] = useState(true)
@@ -50,17 +50,18 @@ export default function SearchFeature() {
     }, [searchText])
 
     return(
-      <> {/* Use a React Fragment to return multiple components */}
+      <> 
         <UserSearch 
           searchText={searchText} 
           setSearchText={setSearchText} 
         />
       
-      {/* Only show results if there is search text */}
         {searchText.length > 0 && (
           <UserSearchResults 
             users={users} 
-            loading={loading} 
+            loading={loading}
+            setSelectedUserId={setSelectedUserId}
+            setSearchText={setSearchText}
           />
         )}
       </>

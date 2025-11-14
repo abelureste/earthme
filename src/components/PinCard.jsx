@@ -11,9 +11,6 @@ export default function PinCard({ pin }) {
               <div>
                 <div className="font-bold text-white text-xl">{ locationName }</div>
                 <div className="text-gray-400 text-md">{latitude}, {longitude}</div>
-                <button className="mt-1.5 bg-gray-700 hover:bg-gray-600 hover:cursor-pointer transition-colors text-white text-xs py-1 px-3 rounded-full">
-                  Go to Pin
-                </button>
               </div>
             </div>
             <div className="inline-flex text-white text-md h-full">
