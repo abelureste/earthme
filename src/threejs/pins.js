@@ -1,13 +1,10 @@
-// /src/threejs/pins.js
 import * as THREE from 'three'
-import { convertLatLonToVec3, pinUpVector } from './utils.js'
 
 /**
  * @param {THREE.ColorRepresentation} color
  * @returns {THREE.Group} A THREE.Group object representing the pin.
  */
 
-// 1. Make sure this function is exported (which it is)
 export function createPin(color) {
   const pinGroup = new THREE.Group();
 
@@ -29,10 +26,3 @@ export function createPin(color) {
 
   return pinGroup;
 }
-
-// 2. Remove the old, hard-coded 'addPins' function
-/*
-export function addPins(earthGroup) {
-  // ...all the old hard-coded pins are deleted...
-}
-*/

@@ -1,7 +1,5 @@
 import * as THREE from 'three'
-// 1. Import 'pinUpVector' from utils
 import { convertLatLonToVec3, pinUpVector } from './utils'
-// 2. Import 'createPin'
 import { createPin } from './pins.js'
 
 export function addGlobeFeatures() {
@@ -38,14 +36,14 @@ export function addGlobeFeatures() {
     featuresGroup.add(latitudeLine);
   }
 
-  // --- Add Pole Pins ---
+  // pole pins
   
-  const polePinScale = 4 // Make them 2.5x larger
-  const polePinColor = 0xc9c9c9 // Make them white
+  const polePinScale = 4 // scale pins
+  const polePinColor = 0xc9c9c9 // pin color
 
-  // 3. North Pole Pin
+  // north pole pin
   const northPolePin = createPin(polePinColor);
-  northPolePin.scale.setScalar(polePinScale); // Scale it up
+  northPolePin.scale.setScalar(polePinScale);
   const northPolePosition = convertLatLonToVec3(90, 0, 1);
   northPolePin.position.copy(northPolePosition);
   northPolePin.quaternion.setFromUnitVectors(
@@ -54,9 +52,9 @@ export function addGlobeFeatures() {
   );
   featuresGroup.add(northPolePin);
 
-  // 4. South Pole Pin
+  // south pole pin
   const southPolePin = createPin(polePinColor);
-  southPolePin.scale.setScalar(polePinScale); // Scale it up
+  southPolePin.scale.setScalar(polePinScale); 
   const southPolePosition = convertLatLonToVec3(-90, 0, 1);
   southPolePin.position.copy(southPolePosition);
   southPolePin.quaternion.setFromUnitVectors(
@@ -64,8 +62,6 @@ export function addGlobeFeatures() {
     southPolePosition.clone().normalize()
   );
   featuresGroup.add(southPolePin);
-
-  // --- End of Pole Pins ---
 
   return featuresGroup
 }
